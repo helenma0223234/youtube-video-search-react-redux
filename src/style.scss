@@ -1,21 +1,86 @@
-:root {
-    text-size-adjust: 100%;
-}
+$fontcolor:  rgb(10%, 10%, 10%);
+$backgroundcolor: rgb(98%, 98%, 98%);
 
 body, html {
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 30%,#05abe0 100%);
+    $fontcolor:  rgb(10%, 10%, 10%);
+    $backgroundcolor: rgb(98%, 98%, 98%);
     height: 100%;
-    font-style:oblique;
-    color: aliceblue;
+    margin: 0;
 }
 
-.logo {
-    background-image: url('img/10yearinvite.png');
-    width: 100px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    // font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+  }
+
+.body-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.body-wrapper .search-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.body-wrapper .search-wrapper h2 {
+    display: flex;
+    align-items: center;
+}
+
+#search-bar {
+    display: flex;
+    align-self: flex-start;
+    margin-right: 4px;
+    // margin-left: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+    input {
+      font-size: 1.25em;
+      border-radius: .25em;
+    }
   }
   
+#video-detail {
+    width: 100%;
+}
+
+#video-section {
+    display: flex;
   
+    li {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      width: 25vw;
+      padding: 10px;
+    }
+    li:hover {
+      background: darken( $backgroundcolor, 10% );
+    }
+}
+
+.details {
+    div {
+      &:first-of-type {
+        margin-top: 4px;
+        font-weight: bold;      
+        font-size: 1.5rem;
+        line-height: 34px;
+        color: #030303;
+      }
+      &:last-of-type {
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #606060;
+      }
+    }
+}
