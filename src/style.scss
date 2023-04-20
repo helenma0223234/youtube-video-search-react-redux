@@ -6,17 +6,10 @@ body, html {
     $fontcolor:  rgb(10%, 10%, 10%);
     $backgroundcolor: rgb(98%, 98%, 98%);
     height: 100%;
-    margin: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
-
-#main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    // font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-  }
 
 .body-wrapper {
     display: flex;
@@ -38,12 +31,11 @@ body, html {
     display: flex;
     align-self: flex-start;
     margin-right: 4px;
-    // margin-left: 14px;
     margin-top: 20px;
     margin-bottom: 20px;
   
     input {
-      font-size: 1.25em;
+      font-size: 1.1em;
       border-radius: .25em;
     }
   }
@@ -71,13 +63,13 @@ body, html {
         text-align: left;
         margin-top: 8px;
     }
-    @media screen and (max-width: 1240px) {
+    @media screen and (max-width: 1150px) {
         li div {
           font-size: 1rem;
           line-height: 1.1;
         }
     }
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1050px) {
     li div {
         font-size: 0.8rem;
         line-height: 0.9;
