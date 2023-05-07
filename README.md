@@ -17,3 +17,4 @@ This starter package that will use:
 - node, npm
 - react
 - react router
+- redux
