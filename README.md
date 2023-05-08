@@ -1,6 +1,6 @@
 # Frontend Starterpack
 
-*with a counter that scrolls that tell you how long you've been on the site...:)*
+*searches a keyword through Youtube API*
 
 [deployed url](https://frontend-starterpack-illustration.onrender.com)
 
