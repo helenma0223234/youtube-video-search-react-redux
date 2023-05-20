@@ -13,3 +13,6 @@ This starter package that will use:
 - babel
 - eslint
 - node, npm
+- react
+- react router
+- redux

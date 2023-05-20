@@ -1,3 +1,7 @@
+:root {
+    text-size-adjust: 100%;
+}
+
 $fontcolor:  rgb(10%, 10%, 10%);
 $backgroundcolor: rgb(98%, 98%, 98%);
 
@@ -95,3 +99,10 @@ body, html {
       }
     }
 }
+
+.active {
+    color: pink;
+  }
+  
+  
+  
