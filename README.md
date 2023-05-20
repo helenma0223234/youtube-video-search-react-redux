@@ -1,6 +1,6 @@
 # Frontend Starterpack
 
-*with a counter that scrolls that tell you how long you've been on the site...:)*
+*with ...:)*
 
 [deployed url](https://frontend-starterpack-illustration.onrender.com)
 
@@ -13,3 +13,6 @@ This starter package that will use:
 - babel
 - eslint
 - node, npm
+- react
+- react router
+- redux
