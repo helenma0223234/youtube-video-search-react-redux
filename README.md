@@ -1,6 +1,6 @@
-# Frontend Starterpack
+# Youtube Video Quick Search - React + Redux state management
 
-*with ...:)*
+*searches a keyword through Youtube API*
 
 [deployed url](https://frontend-starterpack-illustration.onrender.com)
 
