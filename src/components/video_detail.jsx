@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-function VideoDetail({ video }) {
+function VideoDetail() {
+  const video = useSelector((reduxState) => reduxState.video.selected);
   if (!video) {
     return <div>Loading...</div>;
   }

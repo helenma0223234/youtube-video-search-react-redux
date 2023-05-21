@@ -1,19 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import debounce from 'lodash.debounce';
-
+import { useDispatch } from 'react-redux';
+import { setVideos } from '../actions';
 import SearchBar from './search_bar';
 import youtubeSearch from '../services/youtube-api';
 import VideoList from './video_list';
 import VideoDetail from './video_detail';
 
 function YouTubeHooks(props) {
-  const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelected] = useState(null);
-
+  const dispatch = useDispatch();
   const search = (text) => {
-    youtubeSearch(text).then((result) => {
-      setVideos(result);
-      setSelected(result[0]);
+    youtubeSearch(text).then((videos) => {
+      dispatch(setVideos(videos));
     });
   };
 
@@ -27,8 +25,8 @@ function YouTubeHooks(props) {
     <div>
       <SearchBar onSearchChange={debouncedSearch} />
       <div id="video-section">
-        <VideoDetail video={selectedVideo} />
-        <VideoList onVideoSelect={(selection) => setSelected(selection)} videos={videos} />
+        <VideoDetail />
+        <VideoList />
       </div>
     </div>
   );
