@@ -2,7 +2,7 @@
 
 *searches a keyword through Youtube API*
 
-[deployed url](https://frontend-starterpack-illustration.onrender.com)
+[deployed URL](https://youtube-video-search.onrender.com)
 
 ## Stack
 
