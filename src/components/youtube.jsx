@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import debounce from 'lodash.debounce';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setVideos } from '../actions';
 import SearchBar from './search_bar';
 import youtubeSearch from '../services/youtube-api';
@@ -9,8 +9,9 @@ import VideoDetail from './video_detail';
 
 function YouTubeHooks(props) {
   const dispatch = useDispatch();
-  const search = (text) => {
-    youtubeSearch(text).then((videos) => {
+  const query = useSelector((state) => state.search.text);
+  const search = () => {
+    youtubeSearch(query).then((videos) => {
       dispatch(setVideos(videos));
     });
   };
@@ -18,12 +19,12 @@ function YouTubeHooks(props) {
   const debouncedSearch = useCallback(debounce(search, 500), []);
 
   useEffect(() => {
-    debouncedSearch('pixar');
+    debouncedSearch();
   }, []);
 
   return (
     <div>
-      <SearchBar onSearchChange={debouncedSearch} />
+      <SearchBar />
       <div id="video-section">
         <VideoDetail />
         <VideoList />
