@@ -16,7 +16,6 @@ const VideoReducer = produce((draftState, action = {}) => {
       draftState.selected = action.payload;
       break;
     case ActionTypes.SET_VIDEOS:
-      console.log(action.payload);
       // eslint-disable-next-line prefer-destructuring
       draftState.selected = action.payload[0];
       draftState.list = action.payload;
