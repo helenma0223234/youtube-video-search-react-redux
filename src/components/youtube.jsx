@@ -1,29 +1,45 @@
 import React, { useCallback, useEffect } from 'react';
 import debounce from 'lodash.debounce';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setVideos } from '../actions';
+
 import SearchBar from './search_bar';
-import youtubeSearch from '../services/youtube-api';
+import { useSearchVideosQuery } from '../services/youtube-api-thunk';
 import VideoList from './video_list';
 import VideoDetail from './video_detail';
 
 function YouTubeHooks(props) {
   const dispatch = useDispatch();
-  const search = (text) => {
-    youtubeSearch(text).then((videos) => {
-      dispatch(setVideos(videos));
-    });
-  };
+  const query = useSelector((state) => state.search.text);
 
-  const debouncedSearch = useCallback(debounce(search, 500), []);
+  // eslint-disable-next-line no-unused-vars
+  // RTK query hook
+  const { data, error, isLoading } = useSearchVideosQuery(query);
+
+  /* without thunk */
+  // ADD: import youtubeSearch from '../services/youtube-api';
+  // const search = () => {
+  //   youtubeSearch(query).then((videos) => {
+  //     dispatch(setVideos(videos));
+  //   });
+  // };
+
+  const debouncedSearch = useCallback(
+    debounce(() => {
+      if (!error && !isLoading) {
+        dispatch(setVideos(data.items));
+      }
+    }, 200),
+    [data, dispatch, error, isLoading],
+  );
 
   useEffect(() => {
-    debouncedSearch('pixar');
-  }, []);
+    debouncedSearch();
+  }, [debouncedSearch]);
 
   return (
     <div>
-      <SearchBar onSearchChange={debouncedSearch} />
+      <SearchBar />
       <div id="video-section">
         <VideoDetail />
         <VideoList />

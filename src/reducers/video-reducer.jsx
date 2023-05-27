@@ -8,19 +8,7 @@ const initialState = {
   list: [],
 };
 
-// simple version that returns new object manually
-// const VideoReducer = (state = initialState, action = {}) => {
-//   switch (action.type) {
-//     case ActionTypes.SELECT_VIDEO:
-//       return { selected: action.payload, list: state.list };
-//     case ActionTypes.SET_VIDEOS:
-//       return { selected: state.selected, list: action.payload };
-//     default:
-//       return state;
-//   }
-// };
-
-// better version that uses a curried immer function
+// uses curried immer function
 // note: initialState is passed in as second argument rather than default parameter, and no need to return as produce handles that
 const VideoReducer = produce((draftState, action = {}) => {
   switch (action.type) {
@@ -36,5 +24,17 @@ const VideoReducer = produce((draftState, action = {}) => {
       break;
   }
 }, initialState);
+
+// simple version that returns new object manually
+// const VideoReducer = (state = initialState, action = {}) => {
+//   switch (action.type) {
+//     case ActionTypes.SELECT_VIDEO:
+//       return { selected: action.payload, list: state.list };
+//     case ActionTypes.SET_VIDEOS:
+//       return { selected: state.selected, list: action.payload };
+//     default:
+//       return state;
+//   }
+// };
 
 export default VideoReducer;
