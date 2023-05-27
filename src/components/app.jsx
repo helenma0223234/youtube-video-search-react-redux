@@ -6,8 +6,10 @@ import YouTube from './youtube';
 
 function Welcome(props) {
   return (
-    <div>
-      Welcome
+    <div className="container">
+      <h1>Welcome to Quick Youtube Search!</h1>
+      <p>This is a sample welcome page. Feel free to explore the youtube page.</p>
+      <p>You could also refer to source code <a href="https://github.com/helenma0223234/youtube-video-search-react-redux"> here through Github</a>.</p>
     </div>
   );
 }
@@ -15,7 +17,7 @@ function Welcome(props) {
 function Nav(props) {
   return (
     <nav>
-      <ul>
+      <ul id="navbar">
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/youtube">YouTube</NavLink></li>
       </ul>

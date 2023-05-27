@@ -14,4 +14,5 @@ function VideoListItem(props) {
   );
 }
 
+// subscribe itself to changes in the redux store as well, double-way state update imagine dispatch as single way
 export default connect(null, { selectVideo })(VideoListItem);
